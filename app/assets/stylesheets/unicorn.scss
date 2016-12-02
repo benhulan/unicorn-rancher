@@ -1,3 +1,15 @@
 // Place all the styles related to the unicorn controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+    padding-left: 0.5em;
+}
+#content {
+    padding: 0em 2em;
+}
+#unicorns {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}

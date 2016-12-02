@@ -1,13 +1,17 @@
 <h1>Here Be Unicorns!</h1>
 
-<% @unicorns.each do | unicorn | %>
-    <h3><%= unicorn.name %> is in the <%= @locations.find(unicorn.location_id).name %></h3>
-    <ul>
-        <li><strong>Gender:</strong> <%= unicorn.gender %>emale</li>
-        <li><strong>Fave Food:</strong><%= unicorn.favorite_food %></li>
-        <li><strong>Color:</strong><%= unicorn.color %></li>
-    </ul>
-    <%= link_to "Show", unicorn_path(unicorn) %><br>
-    <%= link_to "Move", edit_unicorn_path(unicorn) %>
-<% end %>
+<div id="background">
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/61/e5/52/61e55261b7fa2e0081fdf83d705c1893.jpg" alt="Equestria">
+</div>
 
+<div id="content">
+    <% @unicorns.each do | unicorn | %>
+        <h3><%= unicorn.name %> is in the <%= @locations.find(unicorn.location_id).name %></h3>
+        <ul>
+            <li><strong>Gender:</strong><%= unicorn.gender %></li>
+            <li><strong>Fave Food:</strong><%= unicorn.favorite_food %></li>
+            <li><strong>Color:</strong><%= unicorn.color %></li>
+        </ul>
+        <%= link_to "Show", unicorn_path(unicorn) %>
+    <% end %>
+</div>

@@ -1,9 +1,12 @@
 <h1><%= @location.name %> Life</h1>
 
-   <ul>
+
+    <img id="background" src="<%= @location.image_url %>" alt="<%= @location.name %>" width="100%" />
+
+    <div id="unicorns">   
     <% @unicorns.each do | unicorn | %>
         <%  if unicorn.location_id == @location.id  %>
-               <li><%= unicorn.name %></li>
+               <img src="<%= unicorn.image_url %>" alt="<%= unicorn.name %>" width="150px" />
         <% end %>
     <% end %>
-   </ul>
+    </div>

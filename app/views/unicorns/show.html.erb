@@ -1,5 +1,13 @@
 <h1><%= @unicorn.name %></h1>
+<div id="background">
+    <img src="http://wallpapercave.com/wp/ildJ2CY.jpg" alt="rainbow background" />
+</div>
 
-<p><%= @unicorn.name %> is in the <%= @location.name %></p>
+<div id="content">
+    <p><%= @unicorn.name %> is in the <%= @location.name %></p>
+
+    <img src="<%= @unicorn.image_url %>" alt="<%= @unicorn.name %>" width="200px" />
+    <br />    
+    <%= link_to "Move Me", edit_unicorn_path(@unicorn) %>
     
-<%= link_to "Move Unicorn", edit_unicorn_path(@unicorn) %>
+</div>
