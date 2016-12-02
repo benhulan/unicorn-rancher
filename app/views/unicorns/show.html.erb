@@ -1,2 +1,5 @@
-<h1>Unicorn#show</h1>
-<p>Find me in app/views/unicorn/show.html.erb</p>
+<h1><%= @unicorn.name %></h1>
+
+<p><%= @unicorn.name %> is in the <%= @location.name %></p>
+    
+<%= link_to "Move Unicorn", edit_unicorn_path(@unicorn) %>

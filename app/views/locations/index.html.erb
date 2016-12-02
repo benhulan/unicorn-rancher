@@ -1,12 +1,10 @@
-<h1>Locations#index</h1>
-<!-- <p>Find me in app/views/locations/index.html.erb</p> -->
-
+<h1>Where my Unicorns?</h1>
 
 <% @locations.each do | location | %>
-    <h2><%= location.name %></h2>
+    <h3>Unicorns in the <%= link_to location.name, location_path(location) %>:</h3>
     <ul>
         <% location.unicorns.each do | unicorn | %>
            <li><%= unicorn.name  %></li>
-           <% end %>
+        <% end %>
     </ul>
 <% end %>

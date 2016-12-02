@@ -1,2 +1,9 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<h1><%= @location.name %> Life</h1>
+
+   <ul>
+    <% @unicorns.each do | unicorn | %>
+        <%  if unicorn.location_id == @location.id  %>
+               <li><%= unicorn.name %></li>
+        <% end %>
+    <% end %>
+   </ul>

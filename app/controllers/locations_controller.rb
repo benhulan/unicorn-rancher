@@ -3,7 +3,10 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
 
-  def show
+ def show
+    @unicorns = Unicorn.all
+    @locations = Location.all
+    @location = Location.find(params[:id])
   end
 
   def new
