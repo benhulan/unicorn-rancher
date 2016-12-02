@@ -1,8 +1,12 @@
 <h1><%= @location.name %> Life</h1>
 
-
-    <img id="background" src="<%= @location.image_url %>" alt="<%= @location.name %>" width="100%" />
-
+<div id="background">
+    <img src="<%= @location.image_url %>" alt="<%= @location.name %>" width="100%" />
+</div>
+<div id="content">
+    <%= link_to "Unicorns", unicorns_path %>
+    <%= link_to "Locations", locations_path %>
+</div>
     <div id="unicorns">   
     <% @unicorns.each do | unicorn | %>
         <%  if unicorn.location_id == @location.id  %>

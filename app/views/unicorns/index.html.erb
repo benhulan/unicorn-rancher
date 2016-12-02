@@ -5,6 +5,7 @@
 </div>
 
 <div id="content">
+    <%= link_to "Locations", locations_path %>
     <% @unicorns.each do | unicorn | %>
         <h3><%= unicorn.name %> is in the <%= @locations.find(unicorn.location_id).name %></h3>
         <ul>

@@ -1,9 +1,9 @@
 <h1>Where my Unicorns?</h1>
-
 <div id="background">
     <img src="http://img08.deviantart.net/6853/i/2012/158/2/f/pony_scenery_1_by_midnytesketch-d52owoa.png" alt="pasture background">
 </div>
 <div id="content">
+    <%= link_to "Unicorns", unicorns_path %>
     <% @locations.each do | location | %>
         <h3>Unicorns in the <%= link_to location.name, location_path(location) %>:</h3>
         <ul>
