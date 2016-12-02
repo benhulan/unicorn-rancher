@@ -1,0 +1,10 @@
+<h1>Unicorn#edit</h1>
+
+<h2>Where is <%= @unicorn.name %>?</h2>
+
+<%= form_for @unicorn, url: { action: "update" } do | f | %>
+    <% @locations.each do |location| %>
+        <%= f.radio_button :location, location.name  %><%= location.name %>
+    <% end %>
+    <%= f.submit %>
+<% end  %>

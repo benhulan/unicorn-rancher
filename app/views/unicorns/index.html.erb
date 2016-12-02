@@ -1,0 +1,13 @@
+<h1>Unicorn#index</h1>
+<!-- <p>Find me in app/views/unicorn/index.html.erb</p> -->
+
+<% @unicorns.each do | unicorn | %>
+    <h2><%= unicorn.name %></h2>
+    <ul>
+        <li><%= unicorn.gender %></li>
+        <li><%= unicorn.favorite_food %></li>
+        <li><%= unicorn.color %></li>
+    </ul>
+    <%= link_to "Edit", edit_unicorn_path(unicorn) %>
+<% end %>
+
