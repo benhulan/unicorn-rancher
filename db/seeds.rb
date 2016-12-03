@@ -30,7 +30,8 @@ Unicorn.create([
         favorite_food: "Confectioners Sugar",
         color: "White",
         location_id: 2,
-        image_url: "http://www.strawberryreef.com/images/graphics/G4/amethyst_star_bb_vector_by_durpy-d5prr7a.png"
+        http://images6.fanpop.com/image/polls/1239000/1239471_1372480066177_full.png?v=1372480078
+        image_url: ""
     },
     {
         name: "Rainbow Dash",
