@@ -5,11 +5,15 @@
 </div>
 
 <div id="content">
-    <%= link_to "Locations", locations_path %>
     <% @unicorns.each do | unicorn | %>
         <h3><%= unicorn.name %> is in the <%= @locations.find(unicorn.location_id).name %></h3>
         <%= link_to "Show", unicorn_path(unicorn) %>
     <% end %>
-    <hr>
-    <p><strong>The Herd is Growing!</strong> <%= link_to "Add a Unicorn!", new_unicorn_path %></p>
+    
 </div>
+
+<footer>
+    <hr>
+    <%= link_to "Locations", locations_path %>
+    <p><strong>The Herd is Growing!</strong> <%= link_to "Add a Unicorn!", new_unicorn_path %></p>
+</footer>

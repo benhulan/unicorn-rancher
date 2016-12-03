@@ -19,10 +19,15 @@
         <%= f.text_field :image_url, required: true %><br />
         <%= f.hidden_field :location_id, :value => 1 %>
         <%= f.submit %>
-    <% end %>
+    <% end %>  
+</div>
 
+<footer>
     <hr>
+    <%= link_to "Unicorns", unicorns_path %><br>
+    <%= link_to "Locations", locations_path %>
+    <br>
     <p><small>Unicorn images should be approximately 150 - 300 pixels wide.<br />
     Illustration style should be consistent with the rest of the ranch. <br />
-    Please use only .PNG images with a transparent background and no watermarks.</small></p>    
-</div>
+    Please use only .PNG images with a transparent background and no watermarks.</small></p>  
+</footer>

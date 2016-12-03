@@ -3,7 +3,6 @@
     <img src="http://img08.deviantart.net/6853/i/2012/158/2/f/pony_scenery_1_by_midnytesketch-d52owoa.png" alt="pasture background">
 </div>
 <div id="content">
-    <%= link_to "Unicorns", unicorns_path %>
     <% @locations.each do | location | %>
         <h3>Unicorns in the <%= link_to location.name, location_path(location) %>:</h3>
         <ul>
@@ -12,6 +11,9 @@
             <% end %>
         </ul>
     <% end %>
-    <hr>
-    <p><strong>The Ranch is Growing!</strong> <%= link_to "Add a Location", new_location_path %></p>
 </div>
+<footer>
+    <hr>
+    <%= link_to "Unicorns", unicorns_path %>
+    <p><strong>The Ranch is Growing!</strong> <%= link_to "Add a Location", new_location_path %></p>
+</footer>

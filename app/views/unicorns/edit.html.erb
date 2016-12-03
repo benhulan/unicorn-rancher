@@ -3,14 +3,19 @@
     <img src="http://img04.deviantart.net/a473/i/2012/142/1/4/ponies_fly_by_background_by_adcoon-d50ohmb.png" alt="empty background">
 </div>
 
-<p><%= @unicorn.name %> was in the <%= @location.name %></p>
+<div id="content">
+    <p><%= @unicorn.name %> was in the <%= @location.name %></p>
+    <h2>Where did <%= @unicorn.name %> go?</h2>
+        <%= form_for @unicorn do | f | %>
+            <% @locations.each do |location| %>
+                <%= f.radio_button :location_id, location.id  %><%= location.name %><hr>
+            <% end %>
+        <%= f.submit %>
+    <% end  %>
+</div>
 
-<h2>Where did <%= @unicorn.name %> go?</h2>
-
-    <%= form_for @unicorn do | f | %>
-        <% @locations.each do |location| %>
-            <%= f.radio_button :location_id, location.id  %><%= location.name %><hr>
-        <% end %>
-    <%= f.submit %>
-
-<% end  %>
+<footer>
+    <hr>
+    <%= link_to "Unicorns", unicorns_path %><br>
+    <%= link_to "Locations", locations_path %>
+</footer>

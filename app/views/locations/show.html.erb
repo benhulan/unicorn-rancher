@@ -9,15 +9,24 @@
                <img src="<%= unicorn.image_url %>" alt="<%= unicorn.name %>" width="150px" />
         <% end %>
     <% end %>
-    </div>
+</div>
 <div id="content">
+    
+</div>
+<footer>
+    <hr>
+    <% if @location.id > 1 && @location.id < @locations.count %>
+        <%= link_to "Previous", location_path(@location.id - 1) %>
+        <%= link_to "Next", location_path(@location.id + 1) %>
+    <% elsif @location.id == @locations.count %>
+        <%= link_to "Previous", location_path(@location.id - 1) %>
+        <%= link_to "Next", location_path(1) %>
+    <% elsif @location.id == 1 %>
+        <%= link_to "Previous", location_path(@locations.count) %>
+        <%= link_to "Next", location_path(@location.id + 1) %>
+    <% end %>
+    <br>
     <%= link_to "Unicorns", unicorns_path %><br />
     <%= link_to "Locations", locations_path %>
-        <hr>
-    <% if @location.id < @locations.count %>
-        <%= link_to "Next", location_path(@location.id + 1) %>
-    <% else %>
-        <%= link_to "Next", location_path(1) %>
-    <% end %>
-</div>
+</footer>
    

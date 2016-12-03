@@ -4,8 +4,6 @@
 </div>
 
 <div id="content">
-    <%= link_to "Locations", locations_path %><br />
-    <%= link_to "Unicorns", unicorns_path %>
     <p><%= @unicorn.name %> is in the <%= @location.name %></p>
     <ul>
             <li><strong>Gender:</strong> <%= @unicorn.gender %></li>
@@ -15,10 +13,23 @@
     <img src="<%= @unicorn.image_url %>" alt="<%= @unicorn.name %>" width="200px" />
     <br />    
     <%= link_to "Move Me", edit_unicorn_path(@unicorn) %>
-    <hr>
-    <% if @unicorn.id < @unicorns.count %>
-        <%= link_to "Next", unicorn_path(@unicorn.id + 1) %>
-    <% else %>
-        <%= link_to "Next", unicorn_path(1) %>
-    <% end %>
 </div>
+
+<footer>
+    <hr>
+    <% if @unicorn.id > 1 && @unicorn.id < @unicorns.count %>
+        <%= link_to "Previous", unicorn_path(@unicorn.id - 1) %>
+        <%= link_to "Next", unicorn_path(@unicorn.id + 1) %>
+    <% elsif @unicorn.id == @unicorns.count %>
+        <%= link_to "Previous", unicorn_path(@unicorn.id - 1) %>
+        <%= link_to "Next", unicorn_path(1) %>
+    <% elsif @unicorn.id == 1 %>
+        <%= link_to "Previous", unicorn_path(@unicorns.count) %>
+        <%= link_to "Next", unicorn_path(@unicorn.id + 1) %>
+    <% end %>
+    <br>
+    <%= link_to "Locations", locations_path %><br />
+    <%= link_to "Unicorns", unicorns_path %>
+</footer>
+
+

@@ -2,14 +2,62 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$footer-color: #503D6E;
+$footer-contrast: #FFFCC0;
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Luckiest+Guy');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+a {
+    color: $footer-contrast;
+    &:visited {
+        color: lighten($footer-contrast, 50%);
+    }
+    #content & {
+        color: lighten($footer-color, 10%);
+    }
+}
 h1 {
     padding-left: 0.5em;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 0.1em;
+}
+ul li {
+    list-style: none;
+}
+hr {
+    position: absolute;
+    top: -0.6em;
+    width: 100%;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 1em;
+    width: 100%;
+    background-color: $footer-color;
+    color: $footer-contrast;
 }
 #content {
     padding: 0em 2em;
 }
+
 #unicorns {
     position: absolute;
     top: 300px;
     left: 150px;
+}
+#background {
+    background-size: cover;
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+#background img {
+    width: 100%;
+    max-height: 700px;
 }
