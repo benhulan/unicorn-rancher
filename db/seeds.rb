@@ -11,8 +11,8 @@ Unicorn.create([
     {
         name: "Applejack",
         gender: "Filly",
-        favorite_food: "AppleJacks",
-        color: "Red",
+        favorite_food: "Apple Jacks",
+        color: "Orange",
         location_id: 3,
         image_url: "https://maryrilakkuma.files.wordpress.com/2013/07/crystal_pony_applejack_by_xxfirefly9xx-d5jvus0.png"
     },
@@ -25,7 +25,7 @@ Unicorn.create([
         image_url: "http://i2.kym-cdn.com/photos/images/facebook/000/160/361/filly_nightmare_moon_aka_nyx_by_aibotnya-d40xla5.png"
     },
     {
-        name: "SparkleStar",
+        name: "Sparkle Star",
         gender: "Filly",
         favorite_food: "Confectioners Sugar",
         color: "White",
@@ -36,7 +36,7 @@ Unicorn.create([
         name: "Rainbow Dash",
         gender: "Filly",
         favorite_food: "Fruity Pebbles",
-        color: "Roy G Biv",
+        color: "Rainbow-colored!",
         location_id: 1,
         image_url: "https://s-media-cache-ak0.pinimg.com/originals/28/6f/1d/286f1db9af39be42b383ae4c0c05f451.jpg"
     }

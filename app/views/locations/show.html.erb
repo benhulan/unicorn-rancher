@@ -3,14 +3,21 @@
 <div id="background">
     <img src="<%= @location.image_url %>" alt="<%= @location.name %>" width="100%" />
 </div>
-<div id="content">
-    <%= link_to "Unicorns", unicorns_path %>
-    <%= link_to "Locations", locations_path %>
-</div>
-    <div id="unicorns">   
+ <div id="unicorns">   
     <% @unicorns.each do | unicorn | %>
         <%  if unicorn.location_id == @location.id  %>
                <img src="<%= unicorn.image_url %>" alt="<%= unicorn.name %>" width="150px" />
         <% end %>
     <% end %>
     </div>
+<div id="content">
+    <%= link_to "Unicorns", unicorns_path %><br />
+    <%= link_to "Locations", locations_path %>
+        <hr>
+    <% if @location.id < @locations.count %>
+        <%= link_to "Next", location_path(@location.id + 1) %>
+    <% else %>
+        <%= link_to "Next", location_path(1) %>
+    <% end %>
+</div>
+   

@@ -1,4 +1,4 @@
-<h1>Here Be Unicorns!</h1>
+<h1>Equestria Unicorn Rancher</h1>
 
 <div id="background">
     <img src="https://s-media-cache-ak0.pinimg.com/originals/61/e5/52/61e55261b7fa2e0081fdf83d705c1893.jpg" alt="Equestria">
@@ -8,11 +8,8 @@
     <%= link_to "Locations", locations_path %>
     <% @unicorns.each do | unicorn | %>
         <h3><%= unicorn.name %> is in the <%= @locations.find(unicorn.location_id).name %></h3>
-        <ul>
-            <li><strong>Gender:</strong><%= unicorn.gender %></li>
-            <li><strong>Fave Food:</strong><%= unicorn.favorite_food %></li>
-            <li><strong>Color:</strong><%= unicorn.color %></li>
-        </ul>
         <%= link_to "Show", unicorn_path(unicorn) %>
     <% end %>
+    <hr>
+    <p><strong>The Herd is Growing!</strong> <%= link_to "Add a Unicorn!", new_unicorn_path %></p>
 </div>

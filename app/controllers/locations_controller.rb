@@ -10,8 +10,17 @@ class LocationsController < ApplicationController
   end
 
   def new
+    @location = Location.new
   end
 
   def create
+    Location.create(location_params)
+    redirect_to('/locations')
+  end
+
+  private
+
+  def location_params
+    params.require(:location).permit(:name, :image_url)
   end
 end

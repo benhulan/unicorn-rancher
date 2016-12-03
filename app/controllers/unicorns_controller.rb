@@ -5,6 +5,8 @@ class UnicornsController < ApplicationController
   end
 
   def show
+    @unicorns = Unicorn.all
+    @locations = Location.all
     @unicorn = Unicorn.find(params[:id])
     @locationid = @unicorn.location_id
     @location = Location.find(@locationid)
@@ -35,15 +37,18 @@ class UnicornsController < ApplicationController
 
 
   def new
+    @unicorn = Unicorn.new
   end
 
   def create
+    Unicorn.create(unicorn_params)
+    redirect_to('/unicorns')
   end
 
   private
 
   def unicorn_params
-    params.require(:unicorn).permit(:id, :location, :location_id)
+    params.require(:unicorn).permit(:name, :gender, :favorite_food, :color, :location_id, :image_url)
   end
 
 end

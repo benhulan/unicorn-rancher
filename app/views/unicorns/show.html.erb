@@ -4,10 +4,21 @@
 </div>
 
 <div id="content">
+    <%= link_to "Locations", locations_path %><br />
+    <%= link_to "Unicorns", unicorns_path %>
     <p><%= @unicorn.name %> is in the <%= @location.name %></p>
-
+    <ul>
+            <li><strong>Gender:</strong> <%= @unicorn.gender %></li>
+            <li><strong>Fave Food:</strong> <%= @unicorn.favorite_food %></li>
+            <li><strong>Color:</strong> <%= @unicorn.color %></li>
+        </ul>
     <img src="<%= @unicorn.image_url %>" alt="<%= @unicorn.name %>" width="200px" />
     <br />    
     <%= link_to "Move Me", edit_unicorn_path(@unicorn) %>
-    
+    <hr>
+    <% if @unicorn.id < @unicorns.count %>
+        <%= link_to "Next", unicorn_path(@unicorn.id + 1) %>
+    <% else %>
+        <%= link_to "Next", unicorn_path(1) %>
+    <% end %>
 </div>

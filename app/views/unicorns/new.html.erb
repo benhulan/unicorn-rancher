@@ -1,2 +1,28 @@
-<h1>Unicorn#new</h1>
-<p>Find me in app/views/unicorn/new.html.erb</p>
+
+<h1>Add a Unicorn!</h1>
+<div id="background">
+    <img src="http://static2.wikia.nocookie.net/my-little-pony-postacie/pl/images/5/50/Wiki-background" alt="empty background">
+</div>
+
+<div id="content">
+ 
+    <%= form_for @unicorn do | f | %>
+        <span>Unicorn Name: </span>
+        <%= f.text_field :name, required: true %><br />
+        <span>Gender: </span>
+        <%= f.text_field :gender, required: true %><br />
+        <span>Favorite Food: </span>
+        <%= f.text_field :favorite_food, required: true %><br />
+        <span>Color: </span>
+        <%= f.text_field :color, required: true %><br />
+        <span>Image Url: </span>
+        <%= f.text_field :image_url, required: true %><br />
+        <%= f.hidden_field :location_id, :value => 1 %>
+        <%= f.submit %>
+    <% end %>
+
+    <hr>
+    <p><small>Unicorn images should be approximately 150 - 300 pixels wide.<br />
+    Illustration style should be consistent with the rest of the ranch. <br />
+    Please use only .PNG images with a transparent background and no watermarks.</small></p>    
+</div>

@@ -1,2 +1,21 @@
-<h1>Locations#new</h1>
-<p>Find me in app/views/locations/new.html.erb</p>
+<h1>Add a Location!</h1>
+
+<div id="background">
+    <img src="http://vignette2.wikia.nocookie.net/mlp/images/f/f4/Ponyville_Clocktower_S02E17.png/revision/latest?cb=20121130195624" alt="empty background">
+</div>
+
+<div id="content">
+
+    <%= form_for @location do | f | %>
+        <span>Location Name: </span>
+        <%= f.text_field :name, required: true %><br />
+        <span>Image Url: </span>
+        <%= f.text_field :image_url, required: true %><br />
+        <%= f.submit %>
+    <% end %>
+
+    <hr>
+    <p><small>Location images should be approximately 900 pixels wide x 500 pixels tall. <br />
+    Illustration style should be consistent with the rest of the ranch. <br />
+    These are background images, so please make sure there are no characters or watermarks in the scene.</small></p>    
+</div>
